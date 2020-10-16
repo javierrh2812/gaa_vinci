@@ -1,0 +1,28 @@
+  
+.chatContainer{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+  .chat {
+    max-width: 450px;
+    min-width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #FFFFFF;
+    border-radius: 8px;
+    height: 400px;
+  }
+  
+  @media (min-width: 320px) and (max-width: 480px) {
+ 
+
+  }
+  
+  @media (min-width: 480px) and (max-width: 1200px) {
+    .chat {
+      width: 60%;
+    }
+  }

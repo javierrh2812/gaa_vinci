@@ -1,0 +1,19 @@
+.sketchBar{
+    display:flex;
+    padding: 10px;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+
+#slider{
+    width: 200px;
+    margin-left: 20px;
+    display: block;
+}
+
+
+#icons{
+    display: flex;
+    justify-content: space-around;
+}

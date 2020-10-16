@@ -1,0 +1,12 @@
+{
+   "name": "modules",
+   "version": "1.0.0",
+   "description": "",
+   "main": "words.js",
+   "bin": {
+      "hello": "./words.js"
+   },
+   "keywords": [],
+   "author": "",
+   "license": "ISC"
+}

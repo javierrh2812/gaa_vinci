@@ -1,0 +1,14 @@
+.canvas{
+    width: 600px;
+    min-width: 600px;
+    max-width: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.p5Canvas{
+    border: 1px solid black;
+    z-index: 0;
+}
+
