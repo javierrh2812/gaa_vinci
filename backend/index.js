@@ -1,32 +1,22 @@
-//INICIO EXPRESS
-const app = require("express")()
+import dotenv from "dotenv"
+dotenv.config()
 
-//ELEGIMOS PUERTO
-const PORT = process.env.PORT || 5000
+import server from "./config/server"
+import config from "./config/config"
 
-//INICIAMOS EL SERVIDOR Y LO ASIGNAMOS A UNA CONSTANTE
-const server = app.listen(PORT, () =>
-   //EMITIMOS UN MENSAJE
-   console.log(`Server running on port: ${PORT}`)
-)
+const _config = config()
+const app = server()
 
-//RUTAS
-app.use(require("./router"))
+app.createServer(_config)
+app.startServer()
 
-//CORS
-app.use(require("cors")())
-
+if (_config.env === 'dev') console.log('DEVELOPMENT ENV, CONFIG: ', _config)
 //WEBSOCKET
-const io = require("socket.io")(server) // inicio el socket
-
+//const io = require("socket.io")(server) // inicio el socket
+/*
 io.on("connection", socket => {
-   socket.on("join", ({ name, room }, callback) => {
-      //AÑADIMOS AL NUEVO USUARIO CUANDO EMITE LA ACCION JOIN
-      //LE PASAMOS A LA FUNCION ADDUSER EL OBJETO {id, name, room}
-      const { error, user } = addUser({ id: socket.id, name, room })
+   socket.on("join", () => {
 
-      //SI HAY ERROR, RETORNAMOS
-      if (error) return callback(error)
 
       //SI NO HAY NINGUN ERROR, EMITIMOS UN MENSAJE DE BIENVENIDA
       //CON SOCKET.EMIT SOLO SE ENVIA LA ACCION AL SOCKET
@@ -100,10 +90,4 @@ io.on("connection", socket => {
       if (user) io.to(user.room).emit("canvasEvent", e)
    })
 })
-
-const {
-   addUser,
-   getUser,
-   getUsersInRoom,
-   removeUser
-} = require("./modules/users")
+*/
